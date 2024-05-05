@@ -25,9 +25,9 @@ Integration into system flake:
     . . .
   }
 
-  outputs = { ... } @ inputs {
-    # Add package to system
-    environment.systemPackages = [ inputs.plasticity.packages.${system}. ];
+  # Inside system module:
+  { inputs, system, ... }: {
+    environment.systemPackages = [ inputs.plasticity.packages.${system}.default ];
   }
 }
 
