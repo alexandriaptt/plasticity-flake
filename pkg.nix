@@ -49,7 +49,7 @@ let
   inherit (stdenv.hostPlatform) system;
   throwSystem = throw "plasticity does not support system: ${system}";
 
-  pname = "plasticity-bin";
+  pname = "plasticity";
   version = "24.1.2";
   # version = "1.4.0";
   # hash = "sha256-o5d4l8tb+78fQhRxp8o2Xb1xCQtlUXwmLisAvbQuuq0=";

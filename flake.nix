@@ -12,18 +12,18 @@
         pkgs = import nixpkgs {
           inherit system;
         };
-        plasticity-bin-pkg = pkgs.callPackage ./pkg.nix {};
+        plasticity-pkg = pkgs.callPackage ./pkg.nix {};
       in
       {
         packages = {
-          inherit plasticity-bin-pkg;
-          default = plasticity-bin-pkg;
+          plasticity = plasticity-pkg;
+          default = plasticity-pkg;
         };
 
         apps = let
           plasticity = {
             type = "app";
-            program = "${plasticity-bin-pkg}/bin/plasticity";
+            program = "${plasticity-pkg}/bin/plasticity";
           };
 
         in {
