@@ -23,7 +23,7 @@
         apps = let
           plasticity = {
             type = "app";
-            program = "${plasticity}/bin/plasticity";
+            program = "${plasticity-bin-pkg}/bin/plasticity";
           };
 
         in {
