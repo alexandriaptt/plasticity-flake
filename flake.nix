@@ -3,18 +3,22 @@
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
         pkgs = import nixpkgs {
           inherit system;
         };
         plasticity-pkg = pkgs.callPackage ./pkg.nix {};
-      in
-      {
+      in {
         packages = {
           plasticity = plasticity-pkg;
           default = plasticity-pkg;
@@ -25,7 +29,6 @@
             type = "app";
             program = "${plasticity-pkg}/bin/plasticity";
           };
-
         in {
           inherit plasticity;
           default = plasticity;
@@ -33,4 +36,3 @@
       }
     );
 }
-
