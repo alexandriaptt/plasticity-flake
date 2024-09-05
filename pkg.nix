@@ -50,15 +50,8 @@ let
   throwSystem = throw "plasticity does not support system: ${system}";
 
   pname = "plasticity";
-  version = "24.1.6";
-  # version = "1.4.0";
-  # hash = "sha256-o5d4l8tb+78fQhRxp8o2Xb1xCQtlUXwmLisAvbQuuq0=";
-  # hash = lib.fakeHash;
-  hash = "sha256-DIM3L9o/z2MZqrxPT64jS4c+s2fMApHs6xmDKDmcXGo=";
-  # hash = "sha256-Y0zE8ILtzfSBVTZ5nVKlpe18Ct0Su7ocAHT7yfMtJK8=";
-  # hash = "sha256-mPgRI+7WBFSN61ew3a0h2pddJMJEunmyvJfvqfyEpek=";
-  # hash = "sha256-1Co2084V3ywDj7LOFT8KxFAmcdUQYPACYexQdbbZ/5E=";
-  # hash = "sha256-l4TU+bWkgB5IA6hBVxSnRzaRmo3+VG8wYtITRjoa6u4=";
+  version = "24.2.0";
+  hash = "sha256-LzfdIfBSzMvdW8Z25RrLR0LHOnZdrbbTZCFwUO8D4Ls=";
   binName = "plasticity";
   src = let
     base = "https://github.com/nkallen/plasticity";
